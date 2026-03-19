@@ -1,0 +1,38 @@
+.techstack {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--backgroundColor);
+}
+
+.techstack h2 {
+  position: absolute;
+  top: 5rem;
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--color); /* Changed from #fff to inherit theme text color */
+  z-index: 10;
+  pointer-events: none;
+}
+
+.tech-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .techstack h2 {
+    font-size: 3rem;
+    top: 3rem;
+  }
+}
