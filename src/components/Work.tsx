@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const projects = [
   {
@@ -9,30 +9,40 @@ const projects = [
     category: "Predictive Analytics",
     tools: "Python, Scikit-learn, Pandas, Matplotlib",
     image: "/images/churn.png",
+    github: "https://github.com/muhammad-asif10/Customer_Churn_Prediction_Model",
+    link: "https://ccpmsklearn.streamlit.app/",
   },
   {
     title: "Shop Assist",
     category: "AI E-Commerce Assistant",
     tools: "Python, ML, NLP, LLM",
     image: "/images/shopassist.png",
+    github: "https://github.com/muhammad-asif10/Shop_Assist",
+    link: "",
   },
   {
     title: "Alter",
     category: "Video Downloader",
     tools: "Python, PyQt6, yt-dlp",
     image: "/images/alter.png",
+    github: "https://github.com/muhammad-asif10/Alter",
+    link: "",
   },
   {
     title: "Visuals",
     category: "Data Analytics Platform",
     tools: "React, TypeScript, Supabase",
     image: "/images/visuals.png",
+    github: "",
+    link: "https://visualsbeta.lovable.app/",
   },
   {
     title: "Glotext",
     category: "PDF Translator",
     tools: "Python, pymupdf, deep-translator",
     image: "/images/glotext.png",
+    github: "https://github.com/PublicKernel/Glotext",
+    link: "",
   },
 ];
 
@@ -111,6 +121,18 @@ const Work = () => {
                         <div className="carousel-tools">
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>
+                        </div>
+                        <div className="carousel-links">
+                          {project.github && (
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" data-cursor="disable">
+                              GitHub <MdArrowOutward />
+                            </a>
+                          )}
+                          {project.link && (
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" data-cursor="disable">
+                              Live <MdArrowOutward />
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>

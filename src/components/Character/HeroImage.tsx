@@ -25,15 +25,7 @@ const HeroImage = () => {
           src="/images/me.png" 
           alt="Muhammad Asif" 
           className="hero-image"
-          style={{ 
-            width: '100%', 
-            height: '100%', 
-            objectFit: 'contain',
-            position: 'relative',
-            zIndex: 2,
-            filter: 'drop-shadow(0 0 20px rgba(94, 234, 212, 0.3))' 
-          }} 
-          onError={(e) => {
+          onError={() => {
             // If image fails to load, maybe show nothing or a placeholder
             // For now, we'll just hide it so it doesn't look broken
             // e.currentTarget.style.display = 'none';

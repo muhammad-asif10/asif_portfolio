@@ -3,8 +3,8 @@ import "./styles/Contact.css";
 
 const Contact = () => {
   return (
-    <div className="contact-section section-container" id="contact">
-      <div className="contact-container">
+    <div className="contact-section" id="contact">
+      <div className="contact-container section-container">
         <h3>Contact</h3>
         <div className="contact-flex">
           <div className="contact-box">

@@ -51,23 +51,13 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar onNavigate={handleNavigate} />
       <SocialIcons />
-      {/* 
-         If on home view, show hero children (3D Character).
-         If on projects view, hide or unmount? 
-         If we unmount CharacterModel (passed as children), it might re-load heavily.
-         Let's keep it mounted but hidden if needed, or just unmount for performance.
-         "Optimize load" suggests we prioritize memory/cpu.
-         But let's hide via CSS or conditional rendering.
-         If view is projects, we render Work.
-      */}
-      {view === "home" && isDesktopView && children}
       
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="container-main">
             {view === "home" ? (
                 <>
-                <Landing>{!isDesktopView && children}</Landing>
+                <Landing>{children}</Landing>
                 <About />
                 <WhatIDo />
                 <Career />

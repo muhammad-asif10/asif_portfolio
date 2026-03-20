@@ -324,15 +324,44 @@ h2.landing-info-h2 {
 
 @media screen and (min-width: 1025px) {
   .character-model {
-    height: 100vh;
-    bottom: 0;
-    z-index: 11;
-    position: fixed;
+    height: 75vh;
+    width: auto;
+    bottom: auto;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    position: absolute;
   }
 
-  .character-model::after,
+  .character-model::after {
+    display: block;
+    content: "";
+    width: 120%; /* wider to cover edges */
+    height: 30%; /* Cover a significant portion of the bottom */
+    bottom: -1px; /* seamless */
+    background-image: linear-gradient(to bottom,
+        transparent 0%,
+        var(--backgroundColor) 80%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
   .character-model::before {
-    display: none;
+    display: block;
+    content: "";
+    width: 150%; 
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
   }
 
   .landing-intro {
@@ -393,5 +422,20 @@ h2.landing-info-h2 {
 
   h2.landing-info-h2 {
     font-size: 75px;
+  }
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(94, 234, 212, 0.3));
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-image {
+    width: auto;
+    height: 100%;
   }
 }

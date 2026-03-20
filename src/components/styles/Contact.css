@@ -114,3 +114,6 @@ a.contact-social {
     width: calc(100% - 25px);
   }
 }
+.contact-container {
+  margin: 0 auto;
+}

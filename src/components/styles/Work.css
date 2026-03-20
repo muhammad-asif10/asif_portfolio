@@ -253,6 +253,8 @@
 
     .carousel-arrow-right {
       right: 20px;
+    }
+}
 
 @media only screen and (max-width: 1400px) {
   .work-section h2 {
@@ -339,3 +341,28 @@
     max-height: 250px;
   }
 }
+.carousel-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.carousel-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+}
+
+.carousel-links a:hover {
+  opacity: 1;
+  border-bottom-color: var(--accentColor);
+  color: var(--accentColor);
+}
+

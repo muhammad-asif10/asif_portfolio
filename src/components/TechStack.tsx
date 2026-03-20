@@ -54,7 +54,7 @@ const initialPositions = getRackPositions();
 
 // Mouse/Pointer Component collision sphere
 const Pointer = () => {
-    const { viewport, mouse } = useThree();
+    const { viewport } = useThree();
     const [ref, api] = useSphere(() => ({ 
         args: [2], 
         position: [0, 0, 0], 
@@ -210,9 +210,9 @@ const TechStack = () => {
             <SceneContent />
         </Suspense>
         <Environment preset="city" />
-        <EffectComposer disableNormalPass>
+        <EffectComposer enableNormalPass={false}>
             <N8AO aoRadius={0.5} intensity={1} />
-            <Bloom luminanceThreshold={1} result="bloom" intensity={0.5} />
+            <Bloom luminanceThreshold={1} intensity={0.5} />
         </EffectComposer>
       </Canvas>
     </div>
